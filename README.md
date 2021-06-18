@@ -5,3 +5,6 @@ This is a PowerBI template to visualize message statistics from Exchange servers
 
 Want to see how it works ? [Check out Bernie's Youtube video about it.](https://www.youtube.com/watch?v=PnJ61q_sB_w)
 
+# Download the PowerBI Template
+
+[Download the PowerBI Template here](https://github.com/SammyKrosoft/PowerBI-Exchange-Tracking-Logs/raw/main/Trackinglog-Final-Lab2.zip)
