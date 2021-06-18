@@ -8,3 +8,7 @@ Want to see how it works ? [Check out Bernie's Youtube video about it.](https://
 # Download the PowerBI Template
 
 [Download the PowerBI Template here](https://github.com/SammyKrosoft/PowerBI-Exchange-Tracking-Logs/raw/main/Trackinglog-Final-Lab2.zip)
+
+# Download the PowerShell script that copies the tracking logs to a central location
+
+[Right-Click "Save Link As" to download the GetTrackingLog.ps1 script](https://raw.githubusercontent.com/SammyKrosoft/PowerBI-Exchange-Tracking-Logs/main/GetTrackingLog.ps1)
