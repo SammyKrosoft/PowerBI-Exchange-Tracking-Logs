@@ -38,10 +38,6 @@ You'll see a drop-down menu, choose "Advanced Editor":
 
 ![image](https://user-images.githubusercontent.com/33433229/122837188-b01ace80-d2c1-11eb-95cb-b07bec441db2.png)
 
-Zooming in:
-
-![image](https://user-images.githubusercontent.com/33433229/122837207-b7da7300-d2c1-11eb-88a5-759953a431ac.png)
-
 This will open the Advanced Editor, this is where you paste your Tracking Logs root folder:
 
 ![image](https://user-images.githubusercontent.com/33433229/122837251-c7f25280-d2c1-11eb-82aa-a908442936e8.png)
