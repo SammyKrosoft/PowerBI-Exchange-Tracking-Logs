@@ -1,4 +1,3 @@
-
 # PowerBI-Exchange-Tracking-Logs
 
 Download links are at the bottom ([Click here to go directly at the bottom](#download-the-powerbi-template))
@@ -39,7 +38,7 @@ On that Queries pane, right-click on "Var_LogFolder"
 
 ![image](https://user-images.githubusercontent.com/33433229/122837143-97121d80-d2c1-11eb-970b-58fbdd625b3c.png)
 
-You'll see a drop-down menu, choose "Advanced Editor":
+- You will see a drop-down menu, choose "Advanced Editor":
 <img src = https://user-images.githubusercontent.com/33433229/122837188-b01ace80-d2c1-11eb-95cb-b07bec441db2.png width = 300>
 
 This will open the Advanced Editor, this is where you paste your Tracking Logs root folder:
