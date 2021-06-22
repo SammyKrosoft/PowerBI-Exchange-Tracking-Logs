@@ -1,3 +1,4 @@
+
 # PowerBI-Exchange-Tracking-Logs
 
 Download links are at the bottom ([Click here to go directly at the bottom](#download-the-powerbi-template))
@@ -19,15 +20,16 @@ You can copy logs on a directory manually, or use the ```GetTrackingLog.ps1``` s
 Then update the PowerBI's ```Var_LogFolder``` variable to match the root folder where your tracking logs are located.
 
 To do so, open the PowerBI .pbix file and locate the "Queries > Transform data menu on the "Home" tab
-![image](https://user-images.githubusercontent.com/33433229/122836955-41d60c00-d2c1-11eb-88c0-8c28fd029b28.png)
+
+<img src=https://user-images.githubusercontent.com/33433229/122836955-41d60c00-d2c1-11eb-88c0-8c28fd029b28.png width = 900>
 
 Zooming in :
 
-![image](https://user-images.githubusercontent.com/33433229/122836974-4b5f7400-d2c1-11eb-93f4-1ae6edae83c9.png)
+<img src=https://user-images.githubusercontent.com/33433229/122836974-4b5f7400-d2c1-11eb-93f4-1ae6edae83c9.png width = 900)>
 
-Then click on "Transform data":
+Click on the arrow besides "Transform data" icon, then click on "Transform data" (or directly click on the "Transform data" icon):
 
-![image](https://user-images.githubusercontent.com/33433229/122837011-5f0ada80-d2c1-11eb-8fc6-cfcd24b853ae.png)
+<img src = https://user-images.githubusercontent.com/33433229/122837011-5f0ada80-d2c1-11eb-8fc6-cfcd24b853ae.png width = 200>
 
 The Power Query Editor window will open, look at the left "Queries" pane:
 
@@ -38,20 +40,18 @@ On that Queries pane, right-click on "Var_LogFolder"
 ![image](https://user-images.githubusercontent.com/33433229/122837143-97121d80-d2c1-11eb-970b-58fbdd625b3c.png)
 
 You'll see a drop-down menu, choose "Advanced Editor":
-
-![image](https://user-images.githubusercontent.com/33433229/122837188-b01ace80-d2c1-11eb-95cb-b07bec441db2.png)
+<img src = https://user-images.githubusercontent.com/33433229/122837188-b01ace80-d2c1-11eb-95cb-b07bec441db2.png width = 300>
 
 This will open the Advanced Editor, this is where you paste your Tracking Logs root folder:
-
 ![image](https://user-images.githubusercontent.com/33433229/122837251-c7f25280-d2c1-11eb-82aa-a908442936e8.png)
 
 Zooming in:
 
-![image](https://user-images.githubusercontent.com/33433229/122837283-d3de1480-d2c1-11eb-9964-ba49b89d8c58.png)
+<img src = https://user-images.githubusercontent.com/33433229/122837283-d3de1480-d2c1-11eb-9964-ba49b89d8c58.png width = 300>
 
 And for example if I put my Tracking log files under C:\temp\TrackingLogs, I just paste this value between the double quotes after the ```Source =``` :
 
-![image](https://user-images.githubusercontent.com/33433229/122837378-f839f100-d2c1-11eb-92fa-59e94aca3907.png)
+<img src = https://user-images.githubusercontent.com/33433229/122837378-f839f100-d2c1-11eb-92fa-59e94aca3907.png width = 300>
 
 
 # Download the PowerBI Template
