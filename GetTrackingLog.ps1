@@ -4,7 +4,7 @@
 #------------------------------------------------------------
 
 #To just list the files or actually copy these
-$JustList = $true
+$JustList = $false
 
 #Exchange 2016 or Exchange 2013 or both ?
 $Exchange2016Servers = $true
@@ -14,7 +14,7 @@ $Exchange2013Servers = $true
 $DestinationFolder = "c:\temp\Trackinglog"
 
 #How many days ago we want to go back for tracking logs
-$RetainedDays = 10
+$RetainedDays = 30
 
 #------------------------------------------------------------
 # End of customization
@@ -83,7 +83,7 @@ foreach ($server in $Hubservers){
                 {
                         Write-host $filepath
                 } Else {
-                        write-host "`$JustList set to `$false, copying files" -ForegroundColor DarkRed
+                        write-host "`$JustList set to `$false, copying files" -ForegroundColor red
                         Copy-Item -Path $filepath -destination $destinationpath
                 }
         }
