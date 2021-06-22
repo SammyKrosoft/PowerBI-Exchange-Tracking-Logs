@@ -48,10 +48,10 @@ Then update the PowerBI's ```Var_LogFolder``` variable to match the root folder 
 
 # Download the PowerBI Template
 
-[Download the PowerBI Template here](https://github.com/SammyKrosoft/PowerBI-Exchange-Tracking-Logs/raw/main/Trackinglog-Final-Lab2.zip)
+[Download the PowerBI Template here](https://github.com/SammyKrosoft/PowerBI-Exchange-Tracking-Logs/raw/main/Ex_Trackinglog.zip)
 
 # Download the PowerShell script that copies the tracking logs to a central location
 
-[Right-Click "Save Link As" to download the GetTrackingLog.ps1 script](https://raw.githubusercontent.com/SammyKrosoft/PowerBI-Exchange-Tracking-Logs/main/Ex_Trackinglog.zip)
+[Right-Click "Save Link As" to download the GetTrackingLog.ps1 script](https://raw.githubusercontent.com/SammyKrosoft/PowerBI-Exchange-Tracking-Logs/main/GetTrackingLog.ps1)
 
 > *[Click here to go back up](#powerbi-exchange-tracking-logs)*
