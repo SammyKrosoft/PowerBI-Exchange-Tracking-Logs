@@ -54,4 +54,4 @@ Then update the PowerBI's ```Var_LogFolder``` variable to match the root folder 
 
 [Right-Click "Save Link As" to download the GetTrackingLog.ps1 script](https://raw.githubusercontent.com/SammyKrosoft/PowerBI-Exchange-Tracking-Logs/main/GetTrackingLog.ps1)
 
-> [Click here to go back up](#powerbi-exchange-tracking-logs)
+> *[Click here to go back up](#powerbi-exchange-tracking-logs)*
