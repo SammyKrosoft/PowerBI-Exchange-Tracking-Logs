@@ -1,17 +1,5 @@
 # PowerBI-Exchange-Tracking-Logs
 
-```mermaid
-sequenceDiagram
-Alice ->> Bob: Hello Bob, how are you?
-Bob-->>John: How about you John?
-Bob--x Alice: I am good thanks!
-Bob-x John: I am good thanks!
-Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
-```
-
-Bob-->Alice: Checking with John...
-Alice->John: Yes... John, how are you?
-
 Download links are at the bottom ([Click here to go directly at the bottom](#download-the-powerbi-template))
 
 This is a PowerBI template to visualize message statistics from Exchange servers, from our great Bernard Chouinard, former Microsoft Engineer, and the best Messaging Architect I have ever known, who designed environments for up to 155,000 mailboxes !
