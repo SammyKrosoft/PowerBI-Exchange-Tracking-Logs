@@ -28,7 +28,7 @@ Then update the PowerBI's ```Var_LogFolder``` variable to match the root folder 
 <img src = https://user-images.githubusercontent.com/33433229/122837011-5f0ada80-d2c1-11eb-8fc6-cfcd24b853ae.png width = 200>
 
 - The Power Query Editor window will open, look at the left "Queries" pane:
-![image](https://user-images.githubusercontent.com/33433229/122837039-6c27c980-d2c1-11eb-8f41-27f39982f516.png)
+![image](https://user-images.githubusercontent.com/33433229/122865218-0143b600-d2f4-11eb-91fe-252d0f0da008.png)
 
 - On that Queries pane, right-click on "Var_LogFolder":
 ![image](https://user-images.githubusercontent.com/33433229/122837143-97121d80-d2c1-11eb-970b-58fbdd625b3c.png)
