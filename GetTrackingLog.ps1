@@ -3,54 +3,90 @@
 # and local repository for the copied tracking logs
 #------------------------------------------------------------
 
-$DestinationFolder = "c:\Trackinglog"
+#To just list the files or actually copy these
+$JustList = $true
+
+#Exchange 2016 or Exchange 2013 or both ?
+$Exchange2016Servers = $true
+$Exchange2013Servers = $true
+
+#Destination Folder
+$DestinationFolder = "c:\temp\Trackinglog"
+
+#How many days ago we want to go back for tracking logs
+$RetainedDays = 10
 
 #------------------------------------------------------------
 # End of customization
 #------------------------------------------------------------
-
 
 # Beginning of script
 
 function Get-UNCPath {
 	param(
 		[string]$HostName,
-                [string]$LocalPath)
+        [string]$LocalPath
+        )
 
-        $NewPath = $LocalPath -replace(":","$")
-        #delete the trailing \, if found
-        if ($NewPath.EndsWith("\")) {
-                $NewPath = [Text.RegularExpressions.Regex]::Replace($NewPath, "\\$", "")
-        }
-        $Uncpath = "\\$HostName\$NewPath"
-        Return $Uncpath
+    $NewPath = $LocalPath -replace(":","$")
+    #delete the trailing \, if found
+    if ($NewPath.EndsWith("\")) {
+        $NewPath = [Text.RegularExpressions.Regex]::Replace($NewPath, "\\$", "")
+    }
+    $Uncpath = "\\$HostName\$NewPath"
+    Return $Uncpath
 }
  
- 
-$hubservers = get-exchangeserver |? {$_.serverrole -match "hubtransport"} |% {$_.name}
- 
- 
+
+If ($Exchange2016Servers){
+    $ExchangeServers= Get-ExchangeServer | ? {$_.AdminDisplayVersion -like "*15.1*"} | % {$_.Name}
+}
+
+If ($Exchange2013Servers){
+    if ($ExchangeServers.count -gt 0){
+        $ExchangeServers += Get-ExchangeServer | ? {$_.AdminDisplayVersion -like "*15.0*"} | % {$_.Name}
+    } Else {
+        $ExchangeServers = Get-ExchangeServer | ? {$_.AdminDisplayVersion -like "*15.0*"} | % {$_.Name}
+    }
+}
+
+#putting $ExchangeServers inside $hubservers just to keep same things as the previous script version
+$hubservers = $ExchangeServers
+
+
+Write-host "Found $($hubservers.count) Hub servers/services" -BackgroundColor Yellow -ForegroundColor Blue
+
 foreach ($server in $Hubservers){
-$trackinglog = get-transportserver $server | select MessageTrackingLogPath
-$trackinglogpath = $trackinglog.MessageTrackingLogPath
- 
-$uncPath = get-uncpath $server $trackinglogpath
- 
-$destinationpath = "$DestinationFolder\$server"
-if ( -Not (Test-Path $destinationpath.trim() ))
-{
-New-Item -Path $destinationpath -ItemType Directory
-}
- 
-$RetainedDays = 30
-$Today = (get-date).tolongdatestring()
-$Boundary = (Get-Date).AddDays(-$RetainedDays).tolongdatestring()
-$FileRegEx = 'MSGTRK(\d+)-\d\.\w+'
-$Trackingfiles = Get-ChildItem -Path $uncPath | Where-Object -FilterScript {$_.Name -match $FileRegEx -and $_.creationtime -gt $boundary}
-foreach ($file in $Trackingfiles){
-$filepath = $uncPath +"\"+$file.name
-Copy-Item -Path $filepath -destination $destinationpath
-}
+        $trackinglog = get-transportservice $server | select MessageTrackingLogPath
+        $trackinglogpath = $trackinglog.MessageTrackingLogPath
+        $uncPath = get-uncpath $server $trackinglogpath
+        $destinationpath = "$DestinationFolder\$server"
+        if ( -Not (Test-Path $destinationpath.trim() ))
+        {
+                New-Item -Path $destinationpath -ItemType Directory
+        }
+
+        $Today = (get-date).tolongdatestring()
+        $Boundary = (Get-Date).AddDays(-$RetainedDays).tolongdatestring()
+        $FileRegEx = 'MSGTRK(\d+)-\d\.\w+'
+        Write-Host "Getting MSGTRK files from $uncPath ..." -BackgroundColor magenta -ForegroundColor Blue
+        $Trackingfiles = Get-ChildItem -Path $uncPath | Where-Object -FilterScript {$_.Name -match $FileRegEx -and $_.creationtime -gt $boundary}
+
+        if ($JustList){
+            write-Host "`$JustList set to `$True, just listing the files with their UNC path instead of copying these to the destination ($destinationpath)..." -ForegroundColor Green
+        }
+        write-host "Found $($Trackingfiles.count) files total that are aged from $RetainedDays to today" -ForegroundColor red
+
+        foreach ($file in $Trackingfiles){
+                $filepath = $uncPath +"\"+$file.name
+                if ($JustList)
+                {
+                        Write-host $filepath
+                } Else {
+                        write-host "`$JustList set to `$false, copying files" -ForegroundColor DarkRed
+                        Copy-Item -Path $filepath -destination $destinationpath
+                }
+        }
 }
 
 # End of script
