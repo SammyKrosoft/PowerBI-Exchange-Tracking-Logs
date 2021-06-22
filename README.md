@@ -46,7 +46,7 @@ Then update the PowerBI's ```Var_LogFolder``` variable to match the root folder 
 <img src = https://user-images.githubusercontent.com/33433229/122837378-f839f100-d2c1-11eb-92fa-59e94aca3907.png width = 300>
 
 - finally, choose the "Close and Apply" menu on the "Home" tab menu:
-![image](https://user-images.githubusercontent.com/33433229/122867105-01918080-d2f7-11eb-8849-7870652be176.png)
+![image](https://user-images.githubusercontent.com/33433229/122867544-af9d2a80-d2f7-11eb-903a-0f3bc483c7d5.png)
 
 # Download the PowerBI Template
 
