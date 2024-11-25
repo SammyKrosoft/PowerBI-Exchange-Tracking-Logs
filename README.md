@@ -48,6 +48,11 @@ Then update the PowerBI's ```Var_LogFolder``` variable to match the root folder 
 - finally, choose the "Close and Apply" menu on the "Home" tab menu:
 ![image](https://user-images.githubusercontent.com/33433229/122867544-af9d2a80-d2f7-11eb-903a-0f3bc483c7d5.png)
 
+- The dashbord will look like something similar to this:
+
+![image](https://github.com/user-attachments/assets/14dee8f6-fd2f-40a7-a5a6-7628859fa27d)
+
+
 # Download the PowerBI Template
 
 [Download the PowerBI Template here](https://github.com/SammyKrosoft/PowerBI-Exchange-Tracking-Logs/raw/main/Ex_Trackinglog.zip)
